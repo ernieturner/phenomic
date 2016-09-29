@@ -12,7 +12,7 @@ export const offlinePlugin = (config: PhenomicConfig): Array<Object> => {
     return []
   }
 
-  const assets = globSync([ "**/*" ], {
+  const assets = config.assets ? [] : globSync([ "**/*" ], {
     cwd: config.assets.path,
     nodir: true,
   })
